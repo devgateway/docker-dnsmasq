@@ -12,7 +12,7 @@ COPY entrypoint.sh /
 USER nobody
 WORKDIR /etc/dnsmasq
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/init.sh"]
 CMD ["dnsmasq"]
 
 VOLUME /etc/dnsmasq
