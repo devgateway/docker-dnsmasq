@@ -5,6 +5,7 @@ if [ "$1" != "dnsmasq" ]; then
 fi
 
 exec dnsmasq \
+  --port=5353 \
   --keep-in-foreground \
   --log-facility=- \
   --conf-file=/etc/dnsmasq/dnsmasq.conf

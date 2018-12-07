@@ -9,6 +9,7 @@ RUN set -x; \
 
 COPY entrypoint.sh /
 
+USER nobody
 WORKDIR /etc/dnsmasq
 
 ENTRYPOINT ["/entrypoint.sh"]
@@ -16,5 +17,4 @@ CMD ["dnsmasq"]
 
 VOLUME /etc/dnsmasq
 
-EXPOSE 53/udp
-EXPOSE 53/tcp
+EXPOSE 5353/udp 5353/tcp
