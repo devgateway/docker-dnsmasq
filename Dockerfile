@@ -4,7 +4,10 @@ FROM alpine:3.8
 RUN set -x; \
   apk add --no-cache dnsmasq \
   && mkdir -p /etc/dnsmasq/conf.d \
-  && mv /etc/dnsmasq.conf /etc/dnsmasq
+  && mv /etc/dnsmasq.conf /etc/dnsmasq \
+  && rm -f /etc/init.d/dnsmasq /etc/conf.d/dnsmasq
+
+COPY entrypoint.sh /
 
 WORKDIR /etc/dnsmasq
 
