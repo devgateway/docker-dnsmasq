@@ -7,7 +7,7 @@ RUN set -x; \
   && mv /etc/dnsmasq.conf /etc/dnsmasq \
   && rm -f /etc/init.d/dnsmasq /etc/conf.d/dnsmasq
 
-COPY entrypoint.sh /
+COPY init.sh /
 
 USER nobody
 WORKDIR /etc/dnsmasq
